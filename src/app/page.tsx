@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect } from "react";
+
 export default function Home() {
   async function subscribe() {
     if (typeof navigator == "undefined") return;
@@ -12,14 +14,15 @@ export default function Home() {
     console.log(JSON.stringify(push));
   }
 
-  if ("serviceWorker" in navigator) {
-    addEventListener("load", async () => {
-      if (typeof navigator == "undefined") return;
-      let sw = await navigator.serviceWorker.register("./sw.js");
-      console.log(sw);
-    });
-  }
-
+  useEffect(() => {
+    if ("serviceWorker" in navigator) {
+      addEventListener("load", async () => {
+        if (typeof navigator == "undefined") return;
+        let sw = await navigator.serviceWorker.register("./sw.js");
+        console.log(sw);
+      });
+    }
+  }, []);
   return (
     <main className="">
       <button onClick={subscribe}>Subscribe</button>
