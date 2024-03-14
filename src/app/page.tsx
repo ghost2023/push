@@ -2,6 +2,7 @@
 
 export default function Home() {
   async function subscribe() {
+    if (typeof navigator == "undefined") return;
     let sw = await navigator.serviceWorker.ready;
     let push = await sw.pushManager.subscribe({
       userVisibleOnly: true,
