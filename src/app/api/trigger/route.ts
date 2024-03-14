@@ -16,10 +16,13 @@ export function GET(req: NextRequest) {
 
   // This is the same output of calling JSON.stringify on a PushSubscription
   const pushSubscription = {
-    endpoint: ".....",
+    endpoint:
+      "https://fcm.googleapis.com/fcm/send/dS-byQBUQwY:APA91bHE0jA43-CnCcwCLkrHcErV0aLm6eobaz9MLDoMquRx_E-1qZwJY46BP_W5ig5yH4AlPBW19kvIlaemMXseLmB0ZB1lumEtR2w8e0qRkb3fDNvZOpC3rzrS9Ex_J3MLd_Fe3XIJ",
+    expirationTime: null,
     keys: {
-      auth: ".....",
-      p256dh: ".....",
+      p256dh:
+        "BAYDpR5AT40BPc1a-5NJXO1hbd8zpDXsigazMvKU7vIUF6mbxrRJbreR3z9BFQJN1knLyDxr7rqaf_EFbGQtVcY",
+      auth: "3ShMAucZ7xqno7mfMpldsA",
     },
   };
 
