@@ -13,6 +13,7 @@ export default function Home() {
 
   if ("serviceWorker" in navigator) {
     addEventListener("load", async () => {
+      if (typeof navigator == "undefined") return;
       let sw = await navigator.serviceWorker.register("./sw.js");
       console.log(sw);
     });
