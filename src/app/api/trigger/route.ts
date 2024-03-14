@@ -24,5 +24,5 @@ export function GET(req: NextRequest) {
   };
 
   webpush.sendNotification(pushSubscription, "Your Push Payload Text");
-  NextResponse.json({ success: true });
+  return NextResponse.json({ success: true });
 }
