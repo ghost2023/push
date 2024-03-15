@@ -7,7 +7,7 @@ const keys = {
   privateKey: "S9LY82ydI_BQARkhlBIvD-MKSgHbMIX7AKJHg6uFNV8",
 };
 
-export function GET(req: NextRequest) {
+export async function GET(req: NextRequest) {
   webpush.setVapidDetails(
     "mailto:example@yourdomain.org",
     keys.publicKey,
@@ -26,6 +26,6 @@ export function GET(req: NextRequest) {
     },
   };
 
-  webpush.sendNotification(pushSubscription, "Your Push Payload Text");
+  await webpush.sendNotification(pushSubscription, "Your Push Payload Text");
   return NextResponse.json({ success: true });
 }
